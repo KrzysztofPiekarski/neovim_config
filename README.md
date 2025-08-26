@@ -157,12 +157,12 @@ lua/krispi/
 
 ### **Quick Start**
 1. **Clone repository**:
-   ```bash
+```bash
    git clone <repo-url> ~/.config/nvim
-   ```
+```
 
 2. **Install dependencies**:
-   ```bash
+```bash
    # Python packages
    pip install ruff mypy
    
@@ -171,7 +171,7 @@ lua/krispi/
    ```
 
 3. **Launch Neovim**:
-   ```bash
+```bash
    nvim
    ```
 
