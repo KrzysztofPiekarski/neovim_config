@@ -1,30 +1,30 @@
 # 🚀 Neovim IDE Configuration
 
-**Profesjonalna konfiguracja Neovim jako IDE** z zaawansowanymi funkcjami, nowoczesnym UI i pełnym wsparciem dla programowania.
+**Professional Neovim IDE configuration** with advanced features, modern UI, and full programming support.
 
-## ✨ **Główne funkcje**
+## ✨ **Main Features**
 
-- 🎨 **Nowoczesny UI** - Tokyo Night theme, Lualine, Bufferline, Alpha dashboard
-- 🔧 **LSP (Language Server Protocol)** - Inteligentne podpowiedzi i diagnostyka
+- 🎨 **Modern UI** - Tokyo Night theme, Lualine, Bufferline, Alpha dashboard
+- 🔧 **LSP (Language Server Protocol)** - Intelligent suggestions and diagnostics
 - 📁 **File Management** - NvimTree, Telescope fuzzy finder
 - 🎯 **Code Navigation** - Go to definition, references, implementations
-- 🚀 **Performance** - Lazy loading, optymalizacje wydajności
+- 🚀 **Performance** - Lazy loading, performance optimizations
 - 🎭 **Git Integration** - Gitsigns, fugitive
 - 📝 **Code Editing** - Autopairs, surround, comment, autotag
 
-## 🏗️ **Struktura projektu**
+## 🏗️ **Project Structure**
 
 ```
 lua/krispi/
-├── core/                    # Podstawowa konfiguracja
-│   ├── init.lua           # Inicjalizacja
-│   ├── options.lua        # Opcje Neovim
-│   ├── keymaps.lua        # Globalne keymapy
-│   └── leader-mappings.lua # Leader keymapy
-├── plugins/                # Konfiguracja pluginów
+├── core/                    # Basic configuration
+│   ├── init.lua           # Initialization
+│   ├── options.lua        # Neovim options
+│   ├── keymaps.lua        # Global keymaps
+│   └── leader-mappings.lua # Leader keymaps
+├── plugins/                # Plugin configuration
 │   ├── init.lua           # Lazy.nvim setup
 │   ├── ui.lua             # UI plugins (Noice, Gitsigns, etc.)
-│   ├── colorscheme.lua    # Motywy kolorystyczne
+│   ├── colorscheme.lua    # Color themes
 │   ├── lualine.lua        # Statusline
 │   ├── bufferline.lua     # Tabline/buffers
 │   ├── alpha.lua          # Dashboard
@@ -35,41 +35,41 @@ lua/krispi/
 │   ├── lsp/               # LSP configuration
 │   │   ├── mason.lua      # Package manager
 │   │   └── lspconfig.lua  # LSP servers
-│   └── ...                # Inne pluginy
+│   └── ...                # Other plugins
 ```
 
 ## 🎨 **UI/UX Features**
 
 ### **Colorscheme & Themes**
-- **Tokyo Night** - Główny motyw z custom highlights
-- **Alternatywne motywy** - Catppuccin, Nord, Gruvbox
-- **Custom highlight groups** - Spójne kolory dla wszystkich elementów
+- **Tokyo Night** - Main theme with custom highlights
+- **Alternative themes** - Catppuccin, Nord, Gruvbox
+- **Custom highlight groups** - Consistent colors for all elements
 
 ### **Statusline & Tabline**
-- **Lualine** - Nowoczesny statusline z:
-  - File icons i git status
-  - LSP status i diagnostics
-  - Custom theme i kolory
-- **Bufferline** - Zarządzanie buforami z:
-  - Tab indicators i separators
-  - Git integration i diagnostics
+- **Lualine** - Modern statusline with:
+  - File icons and git status
+  - LSP status and diagnostics
+  - Custom theme and colors
+- **Bufferline** - Buffer management with:
+  - Tab indicators and separators
+  - Git integration and diagnostics
   - Custom styling
 
 ### **Dashboard & Navigation**
-- **Alpha** - Custom dashboard z:
+- **Alpha** - Custom dashboard with:
   - Neovim logo ASCII art
-  - Szybkie akcje (New file, Find, Neotree)
-  - Plugin count i system info
-- **NvimTree** - File explorer z:
-  - Git integration i diagnostics
-  - Custom keymaps i actions
-  - File icons i sorting
+  - Quick actions (New file, Find, Neotree)
+  - Plugin count and system info
+- **NvimTree** - File explorer with:
+  - Git integration and diagnostics
+  - Custom keymaps and actions
+  - File icons and sorting
 
 ### **Enhanced UI Components**
-- **Noice** - Lepsze cmdline i notifications
-- **Gitsigns** - Git status w gutter
+- **Noice** - Better cmdline and notifications
+- **Gitsigns** - Git status in gutter
 - **Indent-blankline** - Indent guides
-- **Barbecue** - Winbar z breadcrumbs
+- **Barbecue** - Winbar with breadcrumbs
 - **Cursorline** - Highlight current line/word
 
 ## 🔧 **LSP & Development Tools**
@@ -91,11 +91,11 @@ lua/krispi/
 - **Prettier** - Code formatter
 
 ### **LSP Features**
-- **Auto-completion** - Inteligentne podpowiedzi
-- **Diagnostics** - Błędy i ostrzeżenia w czasie rzeczywistym
-- **Code actions** - Refactoring i poprawki
-- **Go to definition** - Nawigacja po kodzie
-- **Hover documentation** - Dokumentacja pod kursorem
+- **Auto-completion** - Intelligent suggestions
+- **Diagnostics** - Real-time errors and warnings
+- **Code actions** - Refactoring and fixes
+- **Go to definition** - Code navigation
+- **Hover documentation** - Documentation under cursor
 
 ## ⌨️ **Keymaps**
 
@@ -119,9 +119,9 @@ lua/krispi/
 ## 🚀 **Performance Optimizations**
 
 ### **Lazy Loading**
-- **Event-based** - Plugins ładują się gdy są potrzebne
-- **Priority system** - Ważne pluginy ładują się pierwsze
-- **Dependencies** - Prawidłowa kolejność ładowania
+- **Event-based** - Plugins load when needed
+- **Priority system** - Important plugins load first
+- **Dependencies** - Proper loading order
 
 ### **Neovim Options**
 - **Global statusline** - `laststatus = 3`
@@ -131,29 +131,29 @@ lua/krispi/
 ## 🔧 **Recent Fixes & Improvements**
 
 ### **LSP & Diagnostics** ✅
-- **Naprawione błędy Mason** - usunięte nieistniejące pakiety
-- **Poprawione nazwy pakietów** - `eslint-lsp`, `ruff-lsp`
-- **Usunięte duplikaty** - gitsigns w jednym miejscu
-- **Stabilna konfiguracja** - bez błędów i konfliktów
+- **Fixed Mason errors** - removed non-existent packages
+- **Corrected package names** - `eslint-lsp`, `ruff-lsp`
+- **Removed duplicates** - gitsigns in one place
+- **Stable configuration** - no errors or conflicts
 
 ### **UI & Visual** ✅
-- **Alpha dashboard** - tło i kolory naprawione
-- **Lualine** - uproszczona konfiguracja, debug prints
-- **Bufferline** - usunięte problematyczne opcje
-- **Colorscheme** - custom highlights dla Alpha
+- **Alpha dashboard** - background and colors fixed
+- **Lualine** - simplified configuration, debug prints
+- **Bufferline** - removed problematic options
+- **Colorscheme** - custom highlights for Alpha
 
 ### **Plugin Conflicts** ✅
-- **Usunięte problematyczne pluginy** - lspsaga, nvim-treesitter-textobjects
-- **Uproszczone konfiguracje** - bez deprecated opcji
-- **Prawidłowa kolejność ładowania** - Mason przed LSP
+- **Removed problematic plugins** - lspsaga, nvim-treesitter-textobjects
+- **Simplified configurations** - no deprecated options
+- **Proper loading order** - Mason before LSP
 
 ## 📋 **Installation & Setup**
 
 ### **Requirements**
 - **Neovim** 0.9.0+
-- **Git** - do instalacji pluginów
-- **Node.js** - dla niektórych LSP serwerów
-- **Python** - dla Python development
+- **Git** - for plugin installation
+- **Node.js** - for some LSP servers
+- **Python** - for Python development
 
 ### **Quick Start**
 1. **Clone repository**:
@@ -176,14 +176,14 @@ lua/krispi/
    ```
 
 4. **Wait for setup**:
-   - Mason zainstaluje LSP serwery
-   - Plugins załadują się automatycznie
-   - Alpha dashboard się pojawi
+   - Mason will install LSP servers
+   - Plugins will load automatically
+   - Alpha dashboard will appear
 
 ### **First Time Setup**
-- **Mason** automatycznie zainstaluje potrzebne narzędzia
-- **LSP serwery** będą dostępne po pierwszym uruchomieniu
-- **Keymaps** będą aktywne od razu
+- **Mason** will automatically install needed tools
+- **LSP servers** will be available after first launch
+- **Keymaps** will be active immediately
 
 ## 🎯 **Usage Examples**
 
@@ -213,9 +213,9 @@ K                   " Show documentation
 ## 🔍 **Troubleshooting**
 
 ### **Common Issues**
-- **LSP not working** - Sprawdź `:LspInfo`, `:checkhealth`
-- **Plugins not loading** - Sprawdź `:Lazy status`
-- **Performance issues** - Sprawdź `:profile start`
+- **LSP not working** - Check `:LspInfo`, `:checkhealth`
+- **Plugins not loading** - Check `:Lazy status`
+- **Performance issues** - Check `:profile start`
 
 ### **Debug Commands**
 ```vim
@@ -257,19 +257,19 @@ nvim
 - **Submit pull request**
 
 ### **Issues**
-- **Bug reports** - Opisz problem szczegółowo
-- **Feature requests** - Wyjaśnij potrzebę
-- **Performance issues** - Dołącz profile
+- **Bug reports** - Describe problem in detail
+- **Feature requests** - Explain the need
+- **Performance issues** - Include profiles
 
 ## 📄 **License**
 
-MIT License - zobacz [LICENSE](LICENSE) file.
+MIT License - see [LICENSE](LICENSE) file.
 
 ## 🙏 **Acknowledgments**
 
-- **Neovim community** - za świetne narzędzie
-- **Plugin authors** - za wspaniałe pluginy
-- **Contributors** - za pomoc w rozwoju
+- **Neovim community** - for the great tool
+- **Plugin authors** - for wonderful plugins
+- **Contributors** - for help in development
 
 ---
 
