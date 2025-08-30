@@ -4,7 +4,7 @@
 
 ## ✨ **Main Features**
 
-- 🎨 **Modern UI** - Tokyo Night theme, Lualine, Bufferline, Alpha dashboard
+- 🎨 **Modern UI** - Catppuccin Moka theme, Lualine, Bufferline, Alpha dashboard
 - 🔧 **LSP (Language Server Protocol)** - Intelligent suggestions and diagnostics
 - 📁 **File Management** - NvimTree, Telescope fuzzy finder
 - 🎯 **Code Navigation** - Go to definition, references, implementations
@@ -32,6 +32,7 @@ lua/krispi/
 │   ├── telescope.lua      # Fuzzy finder
 │   ├── nvim-cmp.lua       # Completion
 │   ├── treesitter.lua     # Syntax highlighting
+│   ├── which-key.lua      # Key binding helper
 │   ├── lsp/               # LSP configuration
 │   │   ├── mason.lua      # Package manager
 │   │   └── lspconfig.lua  # LSP servers
@@ -41,29 +42,32 @@ lua/krispi/
 ## 🎨 **UI/UX Features**
 
 ### **Colorscheme & Themes**
-- **Tokyo Night** - Main theme with custom highlights
-- **Alternative themes** - Catppuccin, Nord, Gruvbox
-- **Custom highlight groups** - Consistent colors for all elements
+- **Catppuccin Moka** - Main theme with custom highlights
+- **Custom highlight groups** - Consistent colors for all UI elements
+- **Theme integration** - All plugins use Catppuccin Moka colors
 
 ### **Statusline & Tabline**
 - **Lualine** - Modern statusline with:
   - File icons and git status
   - LSP status and diagnostics
-  - Custom theme and colors
+  - Enhanced colors for better visibility
+  - Custom separators and spacing
 - **Bufferline** - Buffer management with:
   - Tab indicators and separators
   - Git integration and diagnostics
-  - Custom styling
+  - Catppuccin Moka color scheme
 
 ### **Dashboard & Navigation**
 - **Alpha** - Custom dashboard with:
   - Neovim logo ASCII art
   - Quick actions (New file, Find, Neotree)
   - Plugin count and system info
+  - Catppuccin Moka background colors
 - **NvimTree** - File explorer with:
   - Git integration and diagnostics
   - Custom keymaps and actions
   - File icons and sorting
+  - Fixed configuration options
 
 ### **Enhanced UI Components**
 - **Noice** - Better cmdline and notifications
@@ -71,6 +75,7 @@ lua/krispi/
 - **Indent-blankline** - Indent guides
 - **Barbecue** - Winbar with breadcrumbs
 - **Cursorline** - Highlight current line/word
+- **Which-Key** - Key binding helper with Catppuccin Moka theme
 
 ## 🔧 **LSP & Development Tools**
 
@@ -130,22 +135,62 @@ lua/krispi/
 
 ## 🔧 **Recent Fixes & Improvements**
 
-### **LSP & Diagnostics** ✅
+### **🎨 Theme Modernization (Catppuccin Moka)** ✅
+- **Complete theme overhaul** - Replaced Tokyo Night with Catppuccin Moka
+- **Custom color palette** - Enhanced colors for better visibility
+- **Plugin integration** - All UI components use Catppuccin Moka colors
+- **Highlight groups** - Consistent theming across all elements
+
+### **📊 Lualine Status Bar** ✅
+- **Enhanced colors** - Brighter colors for better contrast
+- **Separator fixes** - Visible separators with proper spacing
+- **Theme integration** - Full Catppuccin Moka color scheme
+- **Custom highlights** - Explicit highlight group definitions
+- **Advanced Git integration** - Branch, ahead/behind, stash count
+- **File statistics** - Lines count and current position
+- **Project information** - Project name and details
+- **Time & Date display** - Current time with icons
+
+### **🔧 Which-Key Configuration** ✅
+- **Fixed import issues** - Added proper plugin import in ui.lua
+- **Simplified configuration** - Removed duplicate and invalid options
+- **Error resolution** - Fixed "Unknown option" errors
+- **Theme integration** - Catppuccin Moka colors for all elements
+
+### **📁 NvimTree File Explorer** ✅
+- **Configuration fixes** - Removed invalid options:
+  - ❌ `highlight_opened_files = "all"`
+  - ❌ `sync_root_with_cwd = true`
+  - ❌ `respect_buf_cwd = true`
+- **Theme integration** - Catppuccin Moka colors
+- **Git highlighting** - Enhanced git status display
+
+### **🎯 UI Components** ✅
+- **Alpha dashboard** - Background and colors fixed
+- **Bufferline** - Catppuccin Moka color scheme
+- **Telescope** - Custom colors and borders
+- **Trouble** - Diagnostics with theme colors
+- **Noice** - Enhanced cmdline with theme
+- **Gitsigns** - Git status with custom colors
+
+### **🔍 Telescope Fuzzy Finder** ✅
+- **Fixed fd dependency** - Replaced with standard `find` command
+- **Recent files enhancement** - Increased limit from 20 to 100 files
+- **Better sorting** - Files sorted by last usage
+- **Improved titles** - "Recent Files" instead of generic labels
+- **Performance optimization** - Faster file discovery
+
+### **🔧 LSP & Diagnostics** ✅
 - **Fixed Mason errors** - removed non-existent packages
 - **Corrected package names** - `eslint-lsp`, `ruff-lsp`
 - **Removed duplicates** - gitsigns in one place
 - **Stable configuration** - no errors or conflicts
 
-### **UI & Visual** ✅
-- **Alpha dashboard** - background and colors fixed
-- **Lualine** - simplified configuration, debug prints
-- **Bufferline** - removed problematic options
-- **Colorscheme** - custom highlights for Alpha
-
-### **Plugin Conflicts** ✅
-- **Removed problematic plugins** - lspsaga, nvim-treesitter-textobjects
-- **Simplified configurations** - no deprecated options
+### **⚡ Performance & Stability** ✅
+- **Plugin conflicts resolved** - Removed problematic plugins
+- **Simplified configurations** - No deprecated options
 - **Proper loading order** - Mason before LSP
+- **Lazy loading** - Optimized plugin loading
 
 ## 📋 **Installation & Setup**
 
@@ -210,12 +255,28 @@ K                   " Show documentation
 <leader>gd          " Git diff
 ```
 
+### **Theme & UI**
+```vim
+<leader>?           " Show Which-Key
+:checkhealth        " System health check
+:colorscheme        " View current theme
+```
+
+### **Lualine Status Bar Features**
+```vim
+-- Time & Date: "14:30 | 30.08"
+-- Git Advanced: "main ↑2 ↓1 | stash: 3"
+-- File Statistics: "PYTHON | 1,234 lines | 567"
+-- Project Info: "my-project | Python 3.11"
+```
+
 ## 🔍 **Troubleshooting**
 
 ### **Common Issues**
 - **LSP not working** - Check `:LspInfo`, `:checkhealth`
 - **Plugins not loading** - Check `:Lazy status`
 - **Performance issues** - Check `:profile start`
+- **Theme not loading** - Check `:checkhealth colorscheme`
 
 ### **Debug Commands**
 ```vim
@@ -223,6 +284,7 @@ K                   " Show documentation
 :LspInfo            " LSP server status
 :Lazy status        " Plugin status
 :Mason              " Package manager
+:checkhealth which-key " Which-Key status
 ```
 
 ### **Reset Configuration**
@@ -242,11 +304,13 @@ nvim
 - **Mason** - Package manager
 - **LSP** - Language Server Protocol
 - **Treesitter** - Syntax highlighting
+- **Which-Key** - Key binding helper
 
 ### **Neovim Resources**
 - **Official docs** - `:help`
 - **LSP docs** - `:help lsp`
 - **Keymaps** - `:help keymap`
+- **Theme docs** - `:help highlight`
 
 ## 🤝 **Contributing**
 
@@ -275,4 +339,4 @@ MIT License - see [LICENSE](LICENSE) file.
 
 **Made with ❤️ for the Neovim community**
 
-*Last updated: 22.08.2025*
+*Last updated: 30.08.2025 (Telescope & Lualine enhancements)*

@@ -12,6 +12,9 @@ return {
     priority = 1000, -- wysoki priorytet
   },
   
+  -- Which-Key - Key binding helper (musi być załadowany wcześnie)
+  { import = "krispi.plugins.which-key" },
+  
   -- Import wszystkich pluginów
   { import = "krispi.plugins.ui" },
   { import = "krispi.plugins.lsp" },

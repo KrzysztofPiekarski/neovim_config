@@ -105,6 +105,13 @@ return {
           ["X"] = "\n\n",
         },
       })
+      
+      -- Kolory Catppuccin Moka dla Surround
+      vim.api.nvim_create_autocmd("ColorScheme", {
+        callback = function()
+          vim.api.nvim_set_hl(0, "Surround", { fg = "#F5C2E7", bg = "#1E1E2E", bold = true })
+        end,
+      })
     end,
   },
 }

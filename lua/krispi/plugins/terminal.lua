@@ -90,5 +90,19 @@ return {
 
     -- Automatyczne ustawienie mapowań dla terminala
     vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+    
+    -- Kolory Catppuccin Moka dla Terminal
+    vim.api.nvim_create_autocmd("ColorScheme", {
+      callback = function()
+        vim.api.nvim_set_hl(0, "ToggleTerm1Normal", { bg = "#1E1E2E", fg = "#CDD6F4" })
+        vim.api.nvim_set_hl(0, "ToggleTerm1Border", { bg = "#1E1E2E", fg = "#6C7086" })
+        vim.api.nvim_set_hl(0, "ToggleTerm1FloatBorder", { bg = "#1E1E2E", fg = "#6C7086" })
+        vim.api.nvim_set_hl(0, "ToggleTerm1FloatTitle", { bg = "#1E1E2E", fg = "#CBA6F7", bold = true })
+        vim.api.nvim_set_hl(0, "ToggleTerm1FloatNormal", { bg = "#1E1E2E", fg = "#CDD6F4" })
+        vim.api.nvim_set_hl(0, "ToggleTerm1FloatBorder", { bg = "#1E1E2E", fg = "#6C7086" })
+        vim.api.nvim_set_hl(0, "ToggleTerm1FloatTitle", { bg = "#1E1E2E", fg = "#CBA6F7", bold = true })
+        vim.api.nvim_set_hl(0, "ToggleTerm1FloatNormal", { bg = "#1E1E2E", fg = "#CDD6F4" })
+      end,
+    })
   end,
 }

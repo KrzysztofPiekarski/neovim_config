@@ -68,6 +68,24 @@ return {
             opts.buffer = bufnr
             vim.keymap.set(mode, l, r, opts)
           end
+          
+          -- Kolory Catppuccin Moka dla Gitsigns
+          vim.api.nvim_create_autocmd("ColorScheme", {
+            callback = function()
+              vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = "#A6E3A1" })
+              vim.api.nvim_set_hl(0, "GitSignsChange", { fg = "#FAB387" })
+              vim.api.nvim_set_hl(0, "GitSignsDelete", { fg = "#F38BA8" })
+              vim.api.nvim_set_hl(0, "GitSignsUntracked", { fg = "#A6E3A1" })
+              vim.api.nvim_set_hl(0, "GitSignsTopDelete", { fg = "#F38BA8" })
+              vim.api.nvim_set_hl(0, "GitSignsChangedelete", { fg = "#F9E2AF" })
+              vim.api.nvim_set_hl(0, "GitSignsAddInline", { fg = "#A6E3A1" })
+              vim.api.nvim_set_hl(0, "GitSignsChangeInline", { fg = "#FAB387" })
+              vim.api.nvim_set_hl(0, "GitSignsDeleteInline", { fg = "#F38BA8" })
+              vim.api.nvim_set_hl(0, "GitSignsDeleteVirtLn", { fg = "#F38BA8" })
+              vim.api.nvim_set_hl(0, "GitSignsAddVirtLn", { fg = "#A6E3A1" })
+              vim.api.nvim_set_hl(0, "GitSignsChangeVirtLn", { fg = "#FAB387" })
+            end,
+          })
 
           -- Navigation
           map('n', ']c', function()

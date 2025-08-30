@@ -67,24 +67,24 @@ return {
         end,
       })
 
-      -- Highlight groups - poprawione kolory z tłem
+      -- Highlight groups - kolory Catppuccin Moka
       vim.api.nvim_create_autocmd("User", {
         pattern = "AlphaReady",
         callback = function()
           -- Ustawienie tła dla całego bufora Alpha
           vim.api.nvim_set_hl(0, "Normal", { 
-            bg = "#011628"  -- Kolor tła z tokyonight
+            bg = "#1E1E2E"  -- Kolor tła z Catppuccin Moka
           })
           
           -- Ustawienie tła dla linii
           vim.api.nvim_set_hl(0, "LineNr", { 
-            fg = "#627E97", 
-            bg = "#011628" 
+            fg = "#6C7086", 
+            bg = "#1E1E2E" 
           })
 
           -- Ustawienie tła dla bufora
           vim.api.nvim_set_hl(0, "BufferLineFill", { 
-            bg = "#011628" 
+            bg = "#1E1E2E" 
           })
         end,
       })

@@ -12,8 +12,15 @@ return {
           width = 30,
           side = "left",
         },
+        -- Kolory Catppuccin Moka
+        update_focused_file = {
+          enable = true,
+          update_cwd = true,
+          ignore_list = {},
+        },
         renderer = {
           group_empty = true,
+          highlight_git = true,
           icons = {
             git_placement = "before",
             padding = " ",
@@ -197,6 +204,26 @@ return {
       -- Keymaps są już zdefiniowane w leader-mappings.lua
       -- vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle File Explorer" })
       -- vim.keymap.set("n", "<leader>o", "<cmd>NvimTreeFocus<CR>", { desc = "Focus File Explorer" })
+      
+      -- Kolory Catppuccin Moka dla nvim-tree
+      vim.api.nvim_create_autocmd("ColorScheme", {
+        callback = function()
+          vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = "#1E1E2E", fg = "#CDD6F4" })
+          vim.api.nvim_set_hl(0, "NvimTreeEndOfBuffer", { bg = "#1E1E2E", fg = "#1E1E2E" })
+          vim.api.nvim_set_hl(0, "NvimTreeRootFolder", { bg = "#1E1E2E", fg = "#CBA6F7", bold = true })
+          vim.api.nvim_set_hl(0, "NvimTreeGitDirty", { bg = "#1E1E2E", fg = "#FAB387" })
+          vim.api.nvim_set_hl(0, "NvimTreeGitStaged", { bg = "#1E1E2E", fg = "#A6E3A1" })
+          vim.api.nvim_set_hl(0, "NvimTreeGitMerge", { bg = "#1E1E2E", fg = "#F9E2AF" })
+          vim.api.nvim_set_hl(0, "NvimTreeGitRenamed", { bg = "#1E1E2E", fg = "#89B4FA" })
+          vim.api.nvim_set_hl(0, "NvimTreeGitNew", { bg = "#1E1E2E", fg = "#A6E3A1" })
+          vim.api.nvim_set_hl(0, "NvimTreeImageFile", { bg = "#1E1E2E", fg = "#F5C2E7" })
+          vim.api.nvim_set_hl(0, "NvimTreeSymlink", { bg = "#1E1E2E", fg = "#89DCEB" })
+          vim.api.nvim_set_hl(0, "NvimTreeFolderName", { bg = "#1E1E2E", fg = "#89B4FA" })
+          vim.api.nvim_set_hl(0, "NvimTreeOpenedFolderName", { bg = "#1E1E2E", fg = "#89B4FA", bold = true })
+          vim.api.nvim_set_hl(0, "NvimTreeEmptyFolderName", { bg = "#1E1E2E", fg = "#6C7086" })
+          vim.api.nvim_set_hl(0, "NvimTreeStatusLineNC", { bg = "#1E1E2E", fg = "#6C7086" })
+        end,
+      })
     end,
   },
 }

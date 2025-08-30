@@ -28,6 +28,13 @@ return {
           extended = false,
         },
       })
+      
+      -- Kolory Catppuccin Moka dla Comment
+      vim.api.nvim_create_autocmd("ColorScheme", {
+        callback = function()
+          vim.api.nvim_set_hl(0, "Comment", { fg = "#6C7086", italic = true })
+        end,
+      })
     end,
   },
 }

@@ -25,7 +25,7 @@ return {
 
     -- USUNIĘTO mason-lspconfig.setup() - powodowało problemy z setup_handlers
     -- LSP serwery są teraz konfigurowane bezpośrednio w lspconfig.lua
-    vim.notify("✅ Mason configured successfully (direct LSP setup - no mason-lspconfig)", vim.log.levels.INFO)
+    -- Mason configured silently (direct LSP setup - no mason-lspconfig)
 
     -- instalacja dodatkowych narzędzi (formattery, lintery itp.)
     mason_tool_installer.setup({

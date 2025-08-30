@@ -73,7 +73,7 @@ return {
         },
         pickers = {
           find_files = {
-            find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
+            find_command = { "find", ".", "-type", "f", "-not", "-path", "*/\\.*" },
             hidden = true,
             no_ignore = false,
             no_ignore_parent = false,
@@ -83,6 +83,13 @@ return {
             hidden = true,
             no_ignore = false,
             no_ignore_parent = false,
+          },
+          oldfiles = {
+            cwd_only = false,
+            sort_lastused = true,
+            results_title = "Recent Files",
+            prompt_title = "Recent Files",
+            max_results = 100,
           },
           live_grep = {
             additional_args = function()
@@ -109,6 +116,22 @@ return {
       })
 
       telescope.load_extension("ui-select")
+
+      -- Kolory Catppuccin Moka dla Telescope
+      vim.api.nvim_create_autocmd("ColorScheme", {
+        callback = function()
+          vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "#1E1E2E", fg = "#CDD6F4" })
+          vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = "#1E1E2E", fg = "#6C7086" })
+          vim.api.nvim_set_hl(0, "TelescopePromptNormal", { bg = "#313244", fg = "#CDD6F4" })
+          vim.api.nvim_set_hl(0, "TelescopePromptBorder", { bg = "#313244", fg = "#6C7086" })
+          vim.api.nvim_set_hl(0, "TelescopePromptTitle", { bg = "#313244", fg = "#CBA6F7", bold = true })
+          vim.api.nvim_set_hl(0, "TelescopeResultsTitle", { bg = "#1E1E2E", fg = "#89B4FA", bold = true })
+          vim.api.nvim_set_hl(0, "TelescopePreviewTitle", { bg = "#1E1E2E", fg = "#A6E3A1", bold = true })
+          vim.api.nvim_set_hl(0, "TelescopeSelectionCaret", { bg = "#313244", fg = "#CBA6F7" })
+          vim.api.nvim_set_hl(0, "TelescopeSelection", { bg = "#313244", fg = "#CDD6F4" })
+          vim.api.nvim_set_hl(0, "TelescopeMatching", { bg = "#1E1E2E", fg = "#F9E2AF" })
+        end,
+      })
 
       -- Custom pickers
       local M = {}

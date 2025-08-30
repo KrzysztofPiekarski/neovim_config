@@ -9,7 +9,7 @@ return {
   },
   config = function()
     -- 🚨 PROSTA KONFIGURACJA BEZ MASON - GWARANTOWANA STABILNOŚĆ
-    vim.notify("🔧 Loading SIMPLE LSP config (no Mason dependencies)", vim.log.levels.INFO)
+    -- Loading SIMPLE LSP config silently
     
     local lspconfig = require("lspconfig")
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
@@ -81,13 +81,11 @@ return {
           },
         },
       })
-      vim.notify("✅ lua_ls configured", vim.log.levels.INFO)
     end
 
     -- Python
     if is_executable("pyright") then
       lspconfig.pyright.setup({ capabilities = capabilities })
-      vim.notify("✅ pyright configured", vim.log.levels.INFO)
     end
 
     -- [removed] TypeScript/JavaScript handled by typescript-tools.nvim
@@ -107,7 +105,6 @@ return {
           provideFormatter = false,
         },
       })
-      vim.notify("✅ jsonls configured (SchemaStore)", vim.log.levels.INFO)
     end
 
     -- YAML with SchemaStore (via yamlls)
@@ -128,7 +125,6 @@ return {
           },
         },
       })
-      vim.notify("✅ yamlls configured", vim.log.levels.INFO)
     end
 
     -- [removed] Go handled by go.nvim
@@ -142,7 +138,6 @@ return {
         cmd = { "clangd", "--background-index", "--clang-tidy", "--header-insertion=iwyu" },
         filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
       })
-      vim.notify("✅ clangd configured", vim.log.levels.INFO)
     end
 
     -- [removed] Java handled by nvim-jdtls
@@ -164,22 +159,17 @@ return {
           })
         end,
       })
-      vim.notify("✅ eslint configured (auto-fix on save)", vim.log.levels.INFO)
     end
 
     -- Tailwind CSS
     if is_executable("tailwindcss-language-server") then
       lspconfig.tailwindcss.setup({ capabilities = capabilities })
-      vim.notify("✅ tailwindcss configured", vim.log.levels.INFO)
     end
 
     -- Ruff LSP for Python
     if is_executable("ruff") or is_executable("ruff-lsp") then
       lspconfig.ruff.setup({ capabilities = capabilities })
-      vim.notify("✅ ruff_lsp configured", vim.log.levels.INFO)
     end
 
-    vim.notify("🎉 LSP configuration completed! Servers will auto-detect from Mason.", vim.log.levels.INFO)
-    vim.notify("💡 LSP servers ready! No restart needed for new installations.", vim.log.levels.INFO)
   end,
 }

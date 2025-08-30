@@ -10,4 +10,4 @@ require("krispi.core.keymaps")
 -- Centralne mapowania leader (muszą być po podstawowych mapowaniach)
 require("krispi.core.leader-mappings")
 
-print("✅ Core configuration loaded successfully!")
+-- Core configuration loaded silently

@@ -206,4 +206,4 @@ keymap("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", { desc 
 -- File info
 keymap("n", "<leader>fi", "<cmd>lua vim.lsp.buf.hover()<cr>", { desc = "File Info", noremap = true, silent = true })
 
-print("✅ Leader mappings loaded successfully!")
+-- Leader mappings loaded silently

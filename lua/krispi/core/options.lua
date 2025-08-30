@@ -82,36 +82,36 @@ for _, plugin in pairs(disabled_built_ins) do
   g["loaded_" .. plugin] = 1
 end
 
--- Ustawienia highlight groups
+-- Ustawienia highlight groups dla Catppuccin Moka
 vim.api.nvim_create_autocmd("ColorScheme", {
   callback = function()
     -- Lepsze kolory dla różnych elementów
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-    vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none", fg = "#5E81AC" })
-    vim.api.nvim_set_hl(0, "FloatTitle", { bg = "none", fg = "#81A1C1" })
+    vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none", fg = "#6C7086" })
+    vim.api.nvim_set_hl(0, "FloatTitle", { bg = "none", fg = "#A6ADC8" })
     
     -- Lepsze kolory dla cursorline
-    vim.api.nvim_set_hl(0, "CursorLine", { bg = "#2E3440", sp = "#5E81AC" })
-    vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#81A1C1", bg = "#2E3440", bold = true })
+    vim.api.nvim_set_hl(0, "CursorLine", { bg = "#313244", sp = "#6C7086" })
+    vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#A6ADC8", bg = "#313244", bold = true })
     
     -- Lepsze kolory dla search
-    vim.api.nvim_set_hl(0, "Search", { bg = "#5E81AC", fg = "#2E3440" })
-    vim.api.nvim_set_hl(0, "IncSearch", { bg = "#81A1C1", fg = "#2E3440" })
+    vim.api.nvim_set_hl(0, "Search", { bg = "#89B4FA", fg = "#1E1E2E" })
+    vim.api.nvim_set_hl(0, "IncSearch", { bg = "#45475A", fg = "#1E1E2E" })
     
     -- Lepsze kolory dla git signs
-    vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = "#A3BE8C" })
-    vim.api.nvim_set_hl(0, "GitSignsChange", { fg = "#D08770" })
-    vim.api.nvim_set_hl(0, "GitSignsDelete", { fg = "#BF616A" })
+    vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = "#A6E3A1" })
+    vim.api.nvim_set_hl(0, "GitSignsChange", { fg = "#FAB387" })
+    vim.api.nvim_set_hl(0, "GitSignsDelete", { fg = "#F38BA8" })
     
     -- Lepsze kolory dla indent guides
-    vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = "#3B4252", nocombine = true })
-    vim.api.nvim_set_hl(0, "IndentBlanklineContextChar", { fg = "#5E81AC", nocombine = true })
+    vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = "#585B70", nocombine = true })
+    vim.api.nvim_set_hl(0, "IndentBlanklineContextChar", { fg = "#6C7086", nocombine = true })
     
     -- Lepsze kolory dla winbar
-    vim.api.nvim_set_hl(0, "WinBar", { fg = "#81A1C1", bg = "none" })
-    vim.api.nvim_set_hl(0, "WinBarNC", { fg = "#4C566A", bg = "none" })
+    vim.api.nvim_set_hl(0, "WinBar", { fg = "#A6ADC8", bg = "none" })
+    vim.api.nvim_set_hl(0, "WinBarNC", { fg = "#7F849C", bg = "none" })
   end,
 })
 
-print("✅ Options loaded successfully!")
+-- Options loaded silently

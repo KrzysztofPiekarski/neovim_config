@@ -55,6 +55,13 @@ return {
 
       -- Integration with CMP
       cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
+      
+      -- Kolory Catppuccin Moka dla Autopairs
+      vim.api.nvim_create_autocmd("ColorScheme", {
+        callback = function()
+          vim.api.nvim_set_hl(0, "Autopairs", { fg = "#89B4FA", bg = "#1E1E2E", bold = true })
+        end,
+      })
     end,
   },
 }

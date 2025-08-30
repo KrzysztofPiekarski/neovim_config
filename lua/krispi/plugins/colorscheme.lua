@@ -1,104 +1,5 @@
 return {
   {
-    "folke/tokyonight.nvim",
-    priority = 1000, -- make sure to load this before all the other start plugins
-    config = function()
-      local bg = "#011628"
-      local bg_dark = "#011423"
-      local bg_highlight = "#143652"
-      local bg_search = "#0A64AC"
-      local bg_visual = "#275378"
-      local fg = "#CBE0F0"
-      local fg_dark = "#B4D0E9"
-      local fg_gutter = "#627E97"
-      local border = "#547998"
-
-      require("tokyonight").setup({
-        style = "night",
-        transparent = false,
-        terminal_colors = true,
-        styles = {
-          comments = { italic = true },
-          keywords = { italic = true },
-          functions = { bold = true },
-          variables = {},
-          sidebars = "dark",
-          floats = "dark",
-        },
-        sidebars = { "qf", "help", "terminal", "NvimTree", "Outline" },
-        day_brightness = 0.3,
-        hide_inactive_statusline = false,
-        dim_inactive = false,
-        lualine_bold = true,
-        on_colors = function(colors)
-          colors.bg = bg
-          colors.bg_dark = bg_dark
-          colors.bg_float = bg_dark
-          colors.bg_highlight = bg_highlight
-          colors.bg_popup = bg_dark
-          colors.bg_search = bg_search
-          colors.bg_sidebar = bg_dark
-          colors.bg_statusline = bg_dark
-          colors.bg_visual = bg_visual
-          colors.border = border
-          colors.fg = fg
-          colors.fg_dark = fg_dark
-          colors.fg_float = fg
-          colors.fg_gutter = fg_gutter
-          colors.fg_sidebar = fg_dark
-        end,
-        on_highlights = function(hl, c)
-          -- Lepsze kolory dla różnych elementów
-          hl.Normal = { bg = "none" }
-          hl.NormalFloat = { bg = "none" }
-          hl.FloatBorder = { bg = "none", fg = c.border }
-          hl.FloatTitle = { bg = "none", fg = c.fg_dark }
-          
-          -- Lepsze kolory dla cursorline
-          hl.CursorLine = { bg = c.bg_highlight, sp = c.border }
-          hl.CursorLineNr = { fg = c.fg_dark, bg = c.bg_highlight, bold = true }
-          
-          -- Lepsze kolory dla search
-          hl.Search = { bg = c.bg_search, fg = c.bg }
-          hl.IncSearch = { bg = c.bg_visual, fg = c.bg }
-          
-          -- Lepsze kolory dla git signs
-          hl.GitSignsAdd = { fg = "#A3BE8C" }
-          hl.GitSignsChange = { fg = "#D08770" }
-          hl.GitSignsDelete = { fg = "#BF616A" }
-          
-          -- Lepsze kolory dla indent guides
-          hl.IndentBlanklineChar = { fg = "#3B4252", nocombine = true }
-          hl.IndentBlanklineContextChar = { fg = c.border, nocombine = true }
-          
-          -- Lepsze kolory dla winbar
-          hl.WinBar = { fg = c.fg_dark, bg = "none" }
-          hl.WinBarNC = { fg = c.fg_gutter, bg = "none" }
-          
-          -- Lepsze kolory dla LSP
-          hl.LspSignatureActiveParameter = { fg = c.fg_dark, bold = true }
-          hl.LspCodeLens = { fg = c.fg_gutter, italic = true }
-          
-          -- Lepsze kolory dla Treesitter
-          hl.TreesitterContext = { bg = c.bg_highlight }
-          hl.TreesitterContextLineNumber = { fg = c.fg_dark, bg = c.bg_highlight }
-          
-          -- Specjalne kolory dla Alpha dashboard
-          hl.AlphaHeader = { fg = "#81A1C1", bg = c.bg, bold = true }
-          hl.AlphaHeaderKey = { fg = "#5E81AC", bg = c.bg, bold = true }
-          hl.AlphaHeaderValue = { fg = "#A3BE8C", bg = c.bg }
-          hl.AlphaButton = { fg = "#D8DEE9", bg = c.bg_highlight }
-          hl.AlphaButtonIcon = { fg = "#5E81AC", bg = c.bg_highlight, bold = true }
-          hl.AlphaFooter = { fg = "#4C566A", bg = c.bg, italic = true }
-        end,
-      })
-      -- load the colorscheme here
-      vim.cmd([[colorscheme tokyonight]])
-    end,
-  },
-
-  -- Alternatywne motywy kolorystyczne
-  {
     "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000,
@@ -157,56 +58,88 @@ return {
           neotree = true,
           treesitter = true,
           which_key = true,
+          lualine = true,
         },
-        color_overrides = {},
-        custom_highlights = {},
-        default_integrations = true,
-      })
-    end,
-  },
-
-  -- Motyw Nord
-  {
-    "shaunsingh/nord.nvim",
-    priority = 1000,
-    config = function()
-      vim.g.nord_contrast = true
-      vim.g.nord_borders = true
-      vim.g.nord_disable_background = false
-      vim.g.nord_italic = false
-      vim.g.nord_uniform_diff_background = true
-      vim.g.nord_bold = false
-    end,
-  },
-
-  -- Motyw Gruvbox
-  {
-    "ellisonleao/gruvbox.nvim",
-    priority = 1000,
-    config = function()
-      require("gruvbox").setup({
-        terminal_colors = true,
-        undercurl = true,
-        underline = true,
-        bold = true,
-        italic = {
-          strings = true,
-          comments = true,
-          operators = false,
-          folds = true,
+        color_overrides = {
+          mocha = {
+            rosewater = "#F5E0DC",
+            flamingo = "#F2CDCD",
+            pink = "#F5C2E7",
+            mauve = "#CBA6F7",
+            red = "#F38BA8",
+            maroon = "#EBA0AC",
+            peach = "#FAB387",
+            yellow = "#F9E2AF",
+            green = "#A6E3A1",
+            teal = "#94E2D5",
+            sky = "#89DCEB",
+            sapphire = "#74C7EC",
+            blue = "#89B4FA",
+            lavender = "#B4BEFE",
+            text = "#CDD6F4",
+            subtext1 = "#BAC2DE",
+            subtext0 = "#A6ADC8",
+            overlay2 = "#9399B2",
+            overlay1 = "#7F849C",
+            overlay0 = "#6C7086",
+            surface2 = "#585B70",
+            surface1 = "#45475A",
+            surface0 = "#313244",
+            base = "#1E1E2E",
+            mantle = "#181825",
+            crust = "#11111B",
+          },
         },
-        strikethrough = true,
-        invert_selection = false,
-        invert_signs = false,
-        invert_tabline = false,
-        invert_intend_guides = false,
-        inverse = true,
-        contrast = "soft",
-        palette_overrides = {},
-        overrides = {},
-        dim_inactive = false,
-        transparent_mode = false,
+        custom_highlights = function(colors)
+          return {
+            -- Lepsze kolory dla różnych elementów
+            Normal = { bg = "none" },
+            NormalFloat = { bg = "none" },
+            FloatBorder = { bg = "none", fg = colors.overlay0 },
+            FloatTitle = { bg = "none", fg = colors.subtext0 },
+            
+            -- Lepsze kolory dla cursorline
+            CursorLine = { bg = colors.surface0, sp = colors.overlay0 },
+            CursorLineNr = { fg = colors.subtext0, bg = colors.surface0, bold = true },
+            
+            -- Lepsze kolory dla search
+            Search = { bg = colors.blue, fg = colors.base },
+            IncSearch = { bg = colors.surface1, fg = colors.base },
+            
+            -- Lepsze kolory dla git signs
+            GitSignsAdd = { fg = colors.green },
+            GitSignsChange = { fg = colors.peach },
+            GitSignsDelete = { fg = colors.red },
+            
+            -- Lepsze kolory dla indent guides
+            IndentBlanklineChar = { fg = colors.surface2, nocombine = true },
+            IndentBlanklineContextChar = { fg = colors.overlay0, nocombine = true },
+            
+            -- Lepsze kolory dla winbar
+            WinBar = { fg = colors.subtext0, bg = "none" },
+            WinBarNC = { fg = colors.overlay1, bg = "none" },
+            
+            -- Lepsze kolory dla LSP
+            LspSignatureActiveParameter = { fg = colors.subtext0, bold = true },
+            LspCodeLens = { fg = colors.overlay1, italic = true },
+            
+            -- Lepsze kolory dla Treesitter
+            TreesitterContext = { bg = colors.surface0 },
+            TreesitterContextLineNumber = { fg = colors.subtext0, bg = colors.surface0 },
+            
+            -- Specjalne kolory dla Alpha dashboard
+            AlphaHeader = { fg = colors.sapphire, bg = colors.base, bold = true },
+            AlphaHeaderKey = { fg = colors.blue, bg = colors.base, bold = true },
+            AlphaHeaderValue = { fg = colors.green, bg = colors.base },
+            AlphaButton = { fg = colors.subtext1, bg = colors.surface0 },
+            AlphaButtonIcon = { fg = colors.blue, bg = colors.surface0, bold = true },
+            AlphaFooter = { fg = colors.overlay1, bg = colors.base, italic = true },
+          }
+        end,
       })
+      
+      -- Ustaw Catppuccin jako domyślny motyw
+      vim.cmd([[colorscheme catppuccin]])
     end,
   },
 }
