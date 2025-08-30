@@ -32,6 +32,7 @@ opt.number = true -- Pokaż numery linii
 opt.relativenumber = true -- Relatywne numery linii
 opt.cursorline = true -- Podświetl aktualną linię
 opt.cursorcolumn = false -- Nie podświetlaj kolumny
+opt.cursorlineopt = "both" -- Podświetl linię i numer linii
 opt.signcolumn = "yes" -- Pokaż kolumnę znaków
 opt.showmatch = true -- Pokaż dopasowania nawiasów
 opt.matchtime = 2 -- Czas pokazywania dopasowania
@@ -41,6 +42,9 @@ opt.laststatus = 3 -- Globalny statusline
 opt.ruler = false -- Nie pokazuj linijki (lualine to robi)
 opt.scrolloff = 8 -- Minimalna liczba linii nad/pod kursorem
 opt.sidescrolloff = 8 -- Minimalna liczba kolumn obok kursora
+opt.scrolljump = 1 -- Minimalna liczba linii do przewijania
+opt.sidescroll = 1 -- Minimalna liczba kolumn do przewijania
+opt.scrollopt = "ver,jump" -- Opcje przewijania
 opt.list = false -- Nie pokazuj niewidocznych znaków
 opt.listchars = { tab = "→ ", eol = "↵", trail = "·", extends = "⟩", precedes = "⟨" }
 

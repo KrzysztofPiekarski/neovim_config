@@ -30,3 +30,17 @@ keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" 
 keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
+
+-- Smooth scrolling with neoscroll
+keymap.set("n", "<C-u>", "<cmd>lua require('neoscroll').scroll(-vim.api.nvim_win_get_height(0), true, 300, [['cubic']])<CR>", { desc = "Scroll up smoothly" })
+keymap.set("n", "<C-d>", "<cmd>lua require('neoscroll').scroll(vim.api.nvim_win_get_height(0), true, 300, [['cubic']])<CR>", { desc = "Scroll down smoothly" })
+keymap.set("n", "<C-b>", "<cmd>lua require('neoscroll').scroll(-vim.api.nvim_win_get_height(0), true, 300, [['cubic']])<CR>", { desc = "Scroll up smoothly" })
+keymap.set("n", "<C-f>", "<cmd>lua require('neoscroll').scroll(vim.api.nvim_win_get_height(0), true, 300, [['cubic']])<CR>", { desc = "Scroll down smoothly" })
+
+-- Center view after jumping
+keymap.set("n", "G", "Gzz", { desc = "Go to end and center view" })
+keymap.set("n", "gg", "ggzz", { desc = "Go to beginning and center view" })
+keymap.set("n", "n", "nzz", { desc = "Next search result and center view" })
+keymap.set("n", "N", "Nzz", { desc = "Previous search result and center view" })
+keymap.set("n", "*", "*zz", { desc = "Search word under cursor and center view" })
+keymap.set("n", "#", "#zz", { desc = "Search word under cursor backwards and center view" })

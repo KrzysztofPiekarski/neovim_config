@@ -199,12 +199,12 @@ return {
         mappings = {},
         hide_cursor = true,
         stop_eof = true,
-        respect_scrolloff = false,
+        respect_scrolloff = true,
         cursor_scrolls_alone = true,
-        easing_function = "quadratic",
+        easing_function = "cubic",
         pre_hook = nil,
         post_hook = nil,
-        performance_mode = false,
+        performance_mode = true,
       })
       
       -- Kolory Catppuccin Moka dla Neoscroll
